@@ -36,8 +36,7 @@ public class AddressUser {
                 case 2:
                     System.out.print("Введите имя: ");
                     name = sc.next();
-                    int[] find = adrBook.find(name);
-                    for (int i = 0; i < find.length; i++) {adrBook.print();}
+                    adrBook.find(name);
                     System.out.println();
                     break;
                 case 3:
