@@ -20,19 +20,17 @@ public class AddressBook {
             }
         }
     }
-    public int[] find(String name){
-        int mas = 0;
-        for (int i = 0; i < book.length; i++) {
-            if (book[i] != null && book[i].name.equals(name)) mas++;
-        }
-        int[] newmas = new int[mas];
-        for (int i = 0, j= 0; i < book.length; i++) {
-            if (book[i] != null && book[i].name.equals(name)) {
-                newmas[j] = i;
-                j++;
+    public void find(String fname){
+        boolean count = true;
+        for(int i=0; i < book.length; i++){
+            if(book[i] != null) {
+                if (fname.equals(book[i].name)) {
+                    get(i);
+                    count = false;
+                }
             }
         }
-        return newmas;
+        if(count) System.out.println("Записей не найдено");
     }
     public void get(int index){
         System.out.println("имя: " + book[index].name);
